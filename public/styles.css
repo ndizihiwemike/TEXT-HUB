@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: gold;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+section ul{
+    width: 600px;
+    margin-left: 30%;
+    background-color: #333;
+    color: #f4f4f4;
+    text-decoration: none;
+
+}
+
+table{
+    border-radius: 5px;
+    border: 2px solid #333;
+    margin-left: 25%;
+}
+td,th,tr{
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+img{
+    width: 150px;
+    left: 5px;
+    border-radius: 50%;
+}
+form {
+    margin-top: 20px;
+    width: 700px;
+    margin-left: 27%;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #003366;
+}
+
+p {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start below its position */
+    animation: fadeIn 2s ease-in forwards; /* Animation on load */
+}
+
+/* Paragraph hover effect */
+p:hover {
+    color: #0066cc; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge the paragraph */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart | Text and Tool Hub</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        button { padding: 8px 12px; margin-top: 10px; background: #007BFF; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <table id="cart-table">
+        <tr>
+            <th>Item</th>
+            <th>Price (UGX)</th>
+        </tr>
+    </table>
+
+    <h3 id="total"></h3>
+    <button onclick="submitOrder()">Submit Order via Email</button>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const table = document.getElementById('cart-table');
+        let total = 0;
+
+        cart.forEach(({ item, price }) => {
+            const row = table.insertRow();
+            row.insertCell(0).textContent = item;
+            row.insertCell(1).textContent = price.toLocaleString();
+            total += price;
+        });
+
+        document.getElementById('total').textContent = `Total: UGX ${total.toLocaleString()}`;
+
+        function submitOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            const email = "bwambalewicklif2@gmail.com";
+            const subject = "New Order Submission";
+            let body = "Order Details:\n\n";
+
+            cart.forEach(({ item, price }, index) => {
+                body += `${index + 1}. ${item} - UGX ${price.toLocaleString()}\n`;
+            });
+
+            body += `\nTotal: UGX ${total.toLocaleString()}`;
+
+            // Clear the cart from localStorage
+            localStorage.removeItem('cart');
+
+            // Redirect to mail client
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+
+            // Optional: refresh the page after a small delay
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

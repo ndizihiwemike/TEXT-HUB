@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Text and Tool Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        button {
+            padding: 6px 12px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        nav a {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Text and Tool Hub (U) Limited</h1>
+        <p>Explore Our Wide Range of Educational Materials</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="cart.html">View Cart</a>
+    </nav>
+
+    <main>
+        <section id="products">
+            <h2>Our Products</h2>
+
+            <h3>Books</h3>
+            <table>
+                <tr>
+                    <th>Book Title</th>
+                    <th>New Copy (UGX)</th>
+                    <th>Used Copy (UGX)</th>
+                    <th>Order</th>
+                </tr>
+                <tr>
+                    <td>Advanced Biology</td>
+                    <td>180000</td>
+                    <td>150000</td>
+                    <td>
+                        <button onclick="addToCart('Advanced Biology (New)', 180000)">New</button>
+                        <button onclick="addToCart('Advanced Biology (Used)', 150000)">Used</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Functional Approach Biology (4th Edition)</td>
+                    <td>120000</td>
+                    <td>80000</td>
+                    <td>
+                        <button onclick="addToCart('Functional Biology (New)', 120000)">New</button>
+                        <button onclick="addToCart('Functional Biology (Used)', 80000)">Used</button>
+                    </td>
+                </tr>
+                <!-- Add more books similarly -->
+            </table>
+
+            <h3>Stationeries</h3>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (UGX)</th>
+                    <th>Order</th>
+                </tr>
+                <tr>
+                    <td>Casio FX 991 ES Calculator</td>
+                    <td>95000</td>
+                    <td><button onclick="addToCart('Casio FX 991 ES Calculator', 95000)">Order</button></td>
+                </tr>
+                <!-- Add more stationery items -->
+            </table>
+
+            <h3>Lab Equipment</h3>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (UGX)</th>
+                    <th>Order</th>
+                </tr>
+                <tr>
+                    <td>Dissection Kit</td>
+                    <td>35000</td>
+                    <td><button onclick="addToCart('Dissection Kit', 35000)">Order</button></td>
+                </tr>
+                <!-- Add more lab equipment -->
+            </table>
+
+            <p><strong>Note:</strong> Prices are negotiable depending on the size of your order.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Text and Tool Hub (U) Limited</p>
+    </footer>
+
+    <script>
+        function addToCart(item, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ item, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(item + " added to your cart!");
+        }
+    </script>
+</body>
+</html>
