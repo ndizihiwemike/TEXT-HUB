@@ -2,109 +2,221 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Text and Tool Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        button {
-            padding: 6px 12px;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
         }
-        button:hover {
-            background: #0056b3;
+        
+        .navbar {
+            background-color: #343a40 !important;
         }
-        nav a {
-            margin-right: 15px;
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        
+        .nav-link:hover {
+            color: #adb5bd !important;
+        }
+        
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        .product-section {
+            padding: 40px 0;
+        }
+        
+        .product-table {
+            margin-bottom: 40px;
+        }
+        
+        .product-table th {
+            background-color: #343a40;
+            color: white;
+        }
+        
+        .btn-order {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-order:hover {
+            background-color: #218838;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .note-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Text and Tool Hub (U) Limited</h1>
-        <p>Explore Our Wide Range of Educational Materials</p>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="product.html">Products</a>
-        <a href="about.html">About Us</a>
-        <a href="cart.html">View Cart</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpg" alt="Text and Tool Hub Logo" height="40" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="product.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">View Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
+    <!-- Header -->
+    <header class="text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">Text and Tool Hub (U) Limited</h1>
+            <p class="lead">Explore Our Wide Range of Educational Materials</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
     <main>
-        <section id="products">
-            <h2>Our Products</h2>
-
-            <h3>Books</h3>
-            <table>
-                <tr>
-                    <th>Book Title</th>
-                    <th>New Copy (UGX)</th>
-                    <th>Used Copy (UGX)</th>
-                    <th>Order</th>
-                </tr>
-                <tr>
-                    <td>Advanced Biology</td>
-                    <td>180000</td>
-                    <td>150000</td>
-                    <td>
-                        <button onclick="addToCart('Advanced Biology (New)', 180000)">New</button>
-                        <button onclick="addToCart('Advanced Biology (Used)', 150000)">Used</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Functional Approach Biology (4th Edition)</td>
-                    <td>120000</td>
-                    <td>80000</td>
-                    <td>
-                        <button onclick="addToCart('Functional Biology (New)', 120000)">New</button>
-                        <button onclick="addToCart('Functional Biology (Used)', 80000)">Used</button>
-                    </td>
-                </tr>
-                <!-- Add more books similarly -->
-            </table>
-
-            <h3>Stationeries</h3>
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Price (UGX)</th>
-                    <th>Order</th>
-                </tr>
-                <tr>
-                    <td>Casio FX 991 ES Calculator</td>
-                    <td>95000</td>
-                    <td><button onclick="addToCart('Casio FX 991 ES Calculator', 95000)">Order</button></td>
-                </tr>
-                <!-- Add more stationery items -->
-            </table>
-
-            <h3>Lab Equipment</h3>
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Price (UGX)</th>
-                    <th>Order</th>
-                </tr>
-                <tr>
-                    <td>Dissection Kit</td>
-                    <td>35000</td>
-                    <td><button onclick="addToCart('Dissection Kit', 35000)">Order</button></td>
-                </tr>
-                <!-- Add more lab equipment -->
-            </table>
-
-            <p><strong>Note:</strong> Prices are negotiable depending on the size of your order.</p>
+        <!-- Products Section -->
+        <section id="products" class="product-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Products</h2>
+                
+                <!-- Books Table -->
+                <div class="product-table">
+                    <h3 class="mb-4"><i class="fas fa-book me-2"></i>Books</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Book Title</th>
+                                    <th>New Copy (UGX)</th>
+                                    <th>Used Copy (UGX)</th>
+                                    <th>Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Advanced Biology</td>
+                                    <td>180,000</td>
+                                    <td>150,000</td>
+                                    <td>
+                                        <button class="btn btn-order btn-sm me-2" onclick="addToCart('Advanced Biology (New)', 180000)">New</button>
+                                        <button class="btn btn-order btn-sm" onclick="addToCart('Advanced Biology (Used)', 150000)">Used</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Functional Approach Biology (4th Edition)</td>
+                                    <td>120,000</td>
+                                    <td>80,000</td>
+                                    <td>
+                                        <button class="btn btn-order btn-sm me-2" onclick="addToCart('Functional Biology (New)', 120000)">New</button>
+                                        <button class="btn btn-order btn-sm" onclick="addToCart('Functional Biology (Used)', 80000)">Used</button>
+                                    </td>
+                                </tr>
+                                <!-- Add more books similarly -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Stationery Table -->
+                <div class="product-table">
+                    <h3 class="mb-4"><i class="fas fa-pencil-alt me-2"></i>Stationeries</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price (UGX)</th>
+                                    <th>Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Casio FX 991 ES Calculator</td>
+                                    <td>95,000</td>
+                                    <td><button class="btn btn-order btn-sm" onclick="addToCart('Casio FX 991 ES Calculator', 95000)">Order</button></td>
+                                </tr>
+                                <!-- Add more stationery items -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Lab Equipment Table -->
+                <div class="product-table">
+                    <h3 class="mb-4"><i class="fas fa-flask me-2"></i>Lab Equipment</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price (UGX)</th>
+                                    <th>Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dissection Kit</td>
+                                    <td>35,000</td>
+                                    <td><button class="btn btn-order btn-sm" onclick="addToCart('Dissection Kit', 35000)">Order</button></td>
+                                </tr>
+                                <!-- Add more lab equipment -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <p><strong>Note:</strong> Prices are negotiable depending on the size of your order.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Text and Tool Hub (U) Limited</p>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Text and Tool Hub (U) Limited</p>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         function addToCart(item, price) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];

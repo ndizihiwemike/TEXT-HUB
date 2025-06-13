@@ -3,55 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Text and tool hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Us | Text and Tool Hub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar {
+            background-color: #343a40 !important;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        
+        .nav-link:hover {
+            color: #adb5bd !important;
+        }
+        
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        .about-section {
+            padding: 50px 0;
+        }
+        
+        .section-alt {
+            background-color: #e9ecef;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-control {
+            margin-bottom: 20px;
+        }
+        
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 30px;
+        }
+        
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Text and Tool Hub (U) Limited</h1>
-        <p>Providing affordable educational resources since 2025</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="product.html">Products</a>
-        <a href="about.html">About Us</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpg" alt="Text and Tool Hub Logo" height="40" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
+    <!-- Header -->
+    <header class="text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">Text and Tool Hub (U) Limited</h1>
+            <p class="lead">Providing affordable educational resources since 2025</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
     <main>
-        <section id="about">
-            <h2>Overview of Our Business</h2>
-            <p>Text and tool hub (U) Limited is dedicated to providing quality educational materials, stationery, and lab equipment to students, schools, and educators. Located just 6 km from Kampala City Centre on Bombo Road, we strive to make learning affordable and accessible to all.</p>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4">Overview of Our Business</h2>
+                        <p class="lead">Text and Tool Hub (U) Limited is dedicated to providing quality educational materials, stationery, and lab equipment to students, schools, and educators. Located just 6 km from Kampala City Centre on Bombo Road, we strive to make learning affordable and accessible to all.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="background">
-            <h2>Background</h2>
-            <p>Since our inception, Text and tool hub has been committed to supporting the academic growth of students in Uganda and beyond. With a wide range of products tailored for learners of all levels, we aim to empower the next generation of scientists, engineers, and scholars.</p>
+
+        <!-- Background Section -->
+        <section id="background" class="about-section section-alt">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4">Background</h2>
+                        <p>Since our inception, Text and Tool Hub has been committed to supporting the academic growth of students in Uganda and beyond. With a wide range of products tailored for learners of all levels, we aim to empower the next generation of scientists, engineers, and scholars.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p><strong>Address:</strong> Makerere Kampala</p>
-            <p><strong>Phone:</strong> +256762370760 | +256742184929 </p>
-            <p><strong>Email:</strong> bwambalewicklif2@gmail.com</p>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127585.09336818908!2d32.561618239041236!3d0.34759652266959605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb47a23403b7%3A0xb9a647df84929e47!2sMaganjo%2C%20Uganda!5e0!3m2!1sen!2sug!4v1680711695087!5m2!1sen!2sug" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-            <form action="#" method="POST">
-                <h3>Send Us a Message</h3>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+
+        <!-- Contact Section -->
+        <section id="contact" class="about-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Contact Us</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt me-2"></i> <strong>Address:</strong> Makerere Kampala</p>
+                            <p><i class="fas fa-phone me-2"></i> <strong>Phone:</strong> +256762370760 | +256742184929</p>
+                            <p><i class="fas fa-envelope me-2"></i> <strong>Email:</strong> bwambalewicklif2@gmail.com</p>
+                        </div>
+                        
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127585.09336818908!2d32.561618239041236!3d0.34759652266959605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb47a23403b7%3A0xb9a647df84929e47!2sMaganjo%2C%20Uganda!5e0!3m2!1sen!2sug!4v1680711695087!5m2!1sen!2sug" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="contact-form">
+                            <h3 class="mb-4">Send Us a Message</h3>
+                            <form action="#" method="POST">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message:</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Text and tool hub (U) Limited</p>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Text and Tool Hub (U) Limited</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
